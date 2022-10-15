@@ -1,0 +1,14 @@
+{
+  "app.preferredTerminal": "iTerm2",
+  "autocomplete.disable": false,
+  "autocomplete.fontSize": 12,
+  "autocomplete.height": 200,
+  "autocomplete.theme": "system",
+  "autocomplete.width": 370,
+  "dotfiles.sourceImmediately": "always",
+  "dotfiles.verbosity": "full",
+  "integrations.hyper.disabled": true,
+  "integrations.terminal.disabled": true,
+  "plugins.beta": true,
+  "telemetry.disabled": true
+}
