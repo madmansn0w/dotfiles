@@ -17,19 +17,19 @@ git clone --bare https://github.com/madmansn0w/dotfiles.git $HOME/.cfg
 
 Checkout the content from bare repo to $HOME
 ```bash
-dfconfig checkout
+dfc checkout
 ```
 
 If you are concerned about the files that might be overwritten, the below script will automatically move all those files to a backup folder.
 ```bash
 mkdir -p .config-backup && \
-dfconfig checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+dfc checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
 xargs -I{} mv {} .config-backup/{}
 ```
 
 Re-run the checkout if you had conflicts above
 ```bash
-dfconfig checkout
+dfc checkout
 ```
 
 ---
@@ -43,7 +43,7 @@ git init --bare $HOME/.cfg
 
 Create an alias:
 ```bash
-alias dfconfig='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dfc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 ```
 
 Set the flag `showUntrackedFiles` to `no` on your local repo:
@@ -53,21 +53,21 @@ config config --local status.showUntrackedFiles no
 
 Export alias to `.bashrc`
 ```bash
-echo "alias dfconfig='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
+echo "alias dfc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
 ```
 
 Export alias to `.zshrc` (if you like)
 ```bash
-echo "alias dfconfig='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zshrc
+echo "alias dfc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zshrc
 ```
 
 #### Adding new files
 Add new dotfiles to your local repo for tracking:
 ```bash
-dfconfig status
-dfconfig add .vimrc
-dfconfig commit -m "Add vimrc"
-dfconfig add .bashrc
-dfconfig commit -m "Add bashrc"
-dfconfig push
+dfc status
+dfc add .vimrc
+dfc commit -m "Add vimrc"
+dfc add .bashrc
+dfc commit -m "Add bashrc"
+dfc push
 ```
