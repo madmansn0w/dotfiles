@@ -24,8 +24,6 @@
 	defaultBranch = main
 [submodule]
 	recurse = true
-[url "https://golang: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@github.com"]
-	insteadOf = https://github.com
 # color {{{
 [color]
 	branch = auto
@@ -190,4 +188,4 @@
 	smudge = git-lfs smudge %f
 	required = true
 [credential]
-	helper = manager
+	helper = osxkeychain
