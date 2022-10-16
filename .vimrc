@@ -3,10 +3,11 @@ set nocompatible
 filetype off
 
 " init vim-plug
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " plugins
-Plug 'junegunn/fzf', { 'do': 'yes n \| ./install' }
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
@@ -14,7 +15,6 @@ Plug 'junegunn/limelight.vim', { 'on': 'Goyo' }
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhinz/vim-signify'
 Plug 'dense-analysis/ale'
@@ -22,7 +22,7 @@ Plug 'rstacruz/vim-closer'
 Plug 'Yggdroot/indentLine'
 Plug 'voldikss/vim-floaterm'
 Plug 'leafgarland/typescript-vim'
-"Plug 'ayu-theme/ayu-vim'
+Plug 'ayu-theme/ayu-vim'
 
 " finish plugins
 call plug#end()
